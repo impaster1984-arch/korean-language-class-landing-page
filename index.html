@@ -1,677 +1,553 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국어 프로그램 안내 | Korean Language Classes</title>
-    <!-- Tailwind CSS CDN -->
+    <title>한국어 교실 (Korean Language Class)</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font and Pretendard -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
-        }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        body { font-family: 'Inter', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-200">
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold shadow-md shadow-blue-500/20 shrink-0">
-                    <i data-lucide="book-open" class="w-5 h-5"></i>
-                </div>
-                <div>
-                    <span class="text-lg font-bold tracking-tight text-slate-900 block leading-tight">K-Language Hub</span>
-                    <span class="text-xs text-blue-600 font-medium block">서울신학대학교 국제학부 <span class="font-normal text-blue-500/80 ml-0.5">| Global Division</span></span>
-                </div>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-blue-600 transition flex flex-col items-center">
-                    <span>프로그램 소개</span>
-                    <span class="text-[10px] text-slate-400 mt-0.5 font-normal">About</span>
-                </a>
-                <a href="#classes" class="hover:text-blue-600 transition flex flex-col items-center">
-                    <span>과정 안내</span>
-                    <span class="text-[10px] text-slate-400 mt-0.5 font-normal">Curriculum</span>
-                </a>
-                <a href="#location" class="hover:text-blue-600 transition flex flex-col items-center">
-                    <span>오시는 길</span>
-                    <span class="text-[10px] text-slate-400 mt-0.5 font-normal">Location</span>
-                </a>
-                <a href="#apply" class="hover:text-blue-600 transition flex flex-col items-center">
-                    <span>문의/신청</span>
-                    <span class="text-[10px] text-slate-400 mt-0.5 font-normal">Apply</span>
-                </a>
-            </nav>
-            <div>
-                <a href="#apply" class="px-4 py-1.5 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition shadow-sm shadow-blue-500/20 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-1.5 text-center">
-                    <div class="flex items-center gap-1.5">
-                        <i data-lucide="user-plus" class="w-4 h-4 hidden sm:block"></i> 
-                        <span>신청하기</span>
+    <nav class="fixed top-0 inset-x-0 z-50 glass-effect border-b border-slate-200/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 text-white p-2 rounded-lg">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[10px] text-blue-200 block sm:hidden">Apply</span>
-                </a>
+                    <span class="font-bold text-lg tracking-tight text-slate-900">한국어 교실</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium text-slate-500 hidden sm:inline-block">Korean Language Class</span>
+                    <a href="#register" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-semibold transition shadow-sm">
+                        신청하기
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="hero-gradient text-white py-20 lg:py-28 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-blue-100">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-300"></i> 2026학년도 학기 특별 프로그램 <span class="font-normal opacity-80 ml-1">(2026 Special Program)</span>
-            </span>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 max-w-4xl mx-auto leading-tight">
-                한국어 실력 향상을 위한 <br class="hidden sm:inline"/><span class="text-amber-300">최고의 일요일 프로그램</span>
-            </h1>
-            <p class="text-lg text-blue-200 mb-8 max-w-2xl mx-auto font-medium tracking-wide">
-                The Best Sunday Program to Improve Your Korean Skills
-            </p>
-            <p class="text-base sm:text-lg text-blue-50 mb-10 max-w-3xl mx-auto font-normal leading-relaxed">
-                국제학부 신입생을 위한 <strong class="text-white font-semibold">생활 한국어(보통반)</strong>부터 <br class="hidden sm:inline"/>집중 성장을 위한 <strong class="text-white font-semibold">고급 한국어(특별반)</strong>까지 모두 <strong class="text-amber-300 font-bold">무료</strong>로 진행됩니다.
-                <span class="block mt-3 text-sm text-blue-200/90 font-light">From <strong class="text-white font-medium">Everyday Korean (Normal)</strong> for freshmen to <strong class="text-white font-medium">Advanced Korean (Special)</strong> for intensive growth, all provided for <strong class="text-amber-300 font-bold">FREE</strong>.</span>
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#classes" class="px-8 py-3.5 font-semibold text-blue-900 bg-white rounded-2xl hover:bg-blue-50 transition shadow-xl shadow-black/10 flex flex-col items-center justify-center">
-                    <div class="flex items-center gap-2">과정 자세히 보기 <i data-lucide="arrow-down" class="w-4 h-4"></i></div>
-                    <span class="text-xs text-blue-600 font-normal mt-0.5">View Curriculum</span>
-                </a>
-                <a href="#apply" class="px-8 py-3.5 font-semibold text-white bg-blue-700/60 hover:bg-blue-700/80 backdrop-blur-md border border-white/20 rounded-2xl transition flex flex-col items-center justify-center">
-                    <div class="flex items-center gap-2">지금 바로 신청하기 <i data-lucide="chevron-right" class="w-4 h-4"></i></div>
-                    <span class="text-xs text-blue-200 font-normal mt-0.5">Apply Now</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white border-b border-slate-200/80 py-8 shadow-sm relative z-20 -mt-6 max-w-5xl mx-auto rounded-3xl px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-blue-600 mb-1">100%</div>
-            <div class="text-sm text-slate-800 font-bold">참가 비용 무료</div>
-            <div class="text-xs text-slate-400 font-medium mt-0.5">Free of Charge</div>
-        </div>
-        <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-slate-900 mb-1">매주 일요일</div>
-            <div class="text-sm text-slate-800 font-bold">정기 대면 수업</div>
-            <div class="text-xs text-slate-400 font-medium mt-0.5">Every Sunday Class</div>
-        </div>
-        <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-emerald-600 mb-1">무료 점심</div>
-            <div class="text-sm text-slate-800 font-bold">보통반 식사 제공</div>
-            <div class="text-xs text-slate-400 font-medium mt-0.5">Free Lunch (Normal)</div>
-        </div>
-        <div>
-            <div class="text-2xl lg:text-3xl font-extrabold text-purple-600 mb-1">1:1 매칭</div>
-            <div class="text-sm text-slate-800 font-bold">특별반 한국인 친구</div>
-            <div class="text-xs text-slate-400 font-medium mt-0.5">1:1 Matching (Special)</div>
-        </div>
-    </section>
-
-    <section id="classes" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">CURRICULUM</h2>
-            <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2">맞춤형 두 가지 한국어 과정</h3>
-            <p class="text-lg text-slate-500 font-medium mb-4">Two Customized Korean Courses</p>
-            <p class="text-slate-600 text-base sm:text-lg">내 실력과 목표에 맞추어 선택하여 참여할 수 있습니다. <br class="hidden sm:block"/><span class="text-sm text-slate-400 mt-1 block">Choose and participate according to your skills and goals.</span></p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+    <main class="pt-24 pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             
-            <!-- 생활 한국어 (보통반) 카드 -->
-            <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 card-hover flex flex-col justify-between relative overflow-hidden shadow-sm">
-                <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl">
-                    POPULAR
-                </div>
-                <div>
-                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 font-bold text-xl">
-                        <i data-lucide="users" class="w-7 h-7"></i>
-                    </div>
-                    <span class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-lg mb-2">국제학부 신입생 대상 <span class="font-normal opacity-70 ml-1">| For Freshmen</span></span>
-                    <h4 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">생활 한국어 <span class="text-blue-600 font-normal text-xl">(보통반)</span></h4>
-                    <p class="text-base font-semibold text-slate-500 mb-4">Everyday Korean (Normal Class)</p>
-                    <p class="text-slate-700 text-base sm:text-lg mb-2 leading-relaxed">
-                        대학 생활 및 한국 생활에 꼭 필요한 실용 회화를 배우고, 친구들과 함께 맛있는 점심 식사를 즐기며 친목을 다지는 과정입니다.
-                    </p>
-                    <p class="text-slate-400 text-sm sm:text-base mb-6 leading-relaxed">
-                        Learn practical conversation essential for university and daily life in Korea, and enjoy lunch to build friendships.
-                    </p>
-
-                    <div class="space-y-4 mb-8 border-t border-b border-slate-100 py-6">
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">참가 대상 <span class="font-normal">/ Target</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">국제학부 신입생 <span class="text-sm text-slate-500 font-normal ml-1">Global Division Freshmen</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">참가 비용 <span class="font-normal">/ Cost</span></span>
-                                <span class="text-slate-800 font-semibold text-base text-emerald-600 block">완전 무료 <span class="text-sm text-emerald-600/70 font-normal ml-1">100% Free</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">일시 <span class="font-normal">/ Schedule</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">매주 일요일 오전 11시 <span class="text-sm text-slate-500 font-normal ml-1">Every Sunday 11:00 AM</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">장소 <span class="font-normal">/ Location</span></span>
-                                <div class="flex items-center gap-2 flex-wrap mt-0.5">
-                                    <span class="text-slate-800 font-semibold text-base">서울신대 앞 비전홀 <span class="text-sm text-slate-500 font-normal ml-1">Vision Hall</span></span>
-                                    <button onclick="openVideoModal()" class="inline-flex items-center gap-1 text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-md hover:bg-blue-100 transition font-medium">
-                                        <i data-lucide="video" class="w-3 h-3"></i> 안내영상 (Video)
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 상세 일정 타임라인 -->
-                    <div class="bg-slate-50 p-4 rounded-2xl mb-6">
-                        <span class="text-sm font-bold text-slate-500 uppercase tracking-wider block mb-3">상세 일정 <span class="font-normal normal-case opacity-70 ml-1">| Detailed Schedule</span></span>
-                        <div class="space-y-2 text-base">
-                            <div class="flex justify-between items-center bg-white p-2.5 rounded-xl border border-slate-200/60">
-                                <span class="font-medium text-slate-700">11:00 - 12:00</span>
-                                <div class="text-right">
-                                    <span class="font-semibold text-blue-600 block">생활 한국어 수업</span>
-                                    <span class="text-xs text-slate-400 block mt-0.5">Korean Class</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-center bg-white p-2.5 rounded-xl border border-slate-200/60">
-                                <span class="font-medium text-slate-700">12:00 - 12:50</span>
-                                <div class="text-right">
-                                    <span class="font-semibold text-emerald-600 block">점심식사 제공 (무료)</span>
-                                    <span class="text-xs text-emerald-600/70 block mt-0.5">Free Lunch</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#apply" class="w-full py-3.5 px-4 bg-slate-900 text-white font-semibold rounded-xl hover:bg-blue-600 transition text-center flex flex-col items-center justify-center shadow-sm">
-                    <div class="flex items-center gap-2">생활 한국어 신청하기 <i data-lucide="arrow-right" class="w-4 h-4"></i></div>
-                    <span class="text-xs text-slate-400 font-normal mt-0.5">Apply for Normal Class</span>
-                </a>
-            </div>
-
-            <!-- 고급 한국어 (특별반) 카드 -->
-            <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 card-hover flex flex-col justify-between relative overflow-hidden shadow-sm">
-                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-2xl">
-                    SPECIAL
-                </div>
-                <div>
-                    <div class="w-14 h-14 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6 font-bold text-xl">
-                        <i data-lucide="award" class="w-7 h-7"></i>
-                    </div>
-                    <span class="inline-block px-3 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded-lg mb-2">소수정예 특별 과정 <span class="font-normal opacity-70 ml-1">| Elite Course</span></span>
-                    <h4 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">고급 한국어 <span class="text-purple-600 font-normal text-xl">(특별반)</span></h4>
-                    <p class="text-base font-semibold text-slate-500 mb-4">Advanced Korean (Special Class)</p>
-                    <p class="text-slate-700 text-base sm:text-lg mb-2 leading-relaxed">
-                        듣기 집중 훈련과 1:1 한국인 친구 매칭을 통해 단기간에 최고 수준의 한국어 실력 완성에 도전하는 엘리트 프로그램입니다.
-                    </p>
-                    <p class="text-slate-400 text-sm sm:text-base mb-6 leading-relaxed">
-                        An elite program challenging you to achieve top-tier Korean proficiency in a short time through intensive listening and 1:1 matching with a Korean friend.
-                    </p>
-
-                    <div class="space-y-4 mb-8 border-t border-b border-slate-100 py-6">
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">참가 자격 <span class="font-normal">/ Qualification</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">인터뷰 후 결정 <span class="text-sm text-slate-500 font-normal ml-1">Decided after interview</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">모집 인원 <span class="font-normal">/ Capacity</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">10명 <span class="text-sm text-slate-500 font-normal ml-1">Limited to 10 students</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">일시 <span class="font-normal">/ Schedule</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">매주 일요일 오후 1:00 - 4:00 <span class="text-sm text-slate-500 font-normal ml-1">Every Sun 1 PM - 4 PM</span></span>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 mt-0.5">
-                                <i data-lucide="check" class="w-4 h-4"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-slate-400 block font-medium">장소 <span class="font-normal">/ Location</span></span>
-                                <span class="text-slate-800 font-semibold text-base block">백주년기념관 512호 <span class="text-sm text-slate-500 font-normal block mt-0.5 sm:inline sm:mt-0">Centennial Hall Rm 512</span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 특별 혜택 박스 -->
-                    <div class="bg-purple-50/70 border border-purple-100 p-5 rounded-2xl mb-6">
-                        <span class="text-base font-bold text-purple-700 uppercase tracking-wider block mb-3 flex items-center gap-1.5">
-                            <i data-lucide="gift" class="w-5 h-5"></i> 특별반에게 제공되는 특별 서비스 <span class="text-sm font-normal opacity-70 normal-case ml-1">| Special Benefits</span>
-                        </span>
-                        <div class="space-y-4 text-lg text-purple-900 font-bold mt-3">
-                            <div class="flex items-start gap-2.5">
-                                <span class="w-2 h-2 rounded-full bg-purple-600 mt-3 shrink-0"></span>
-                                <div>
-                                    <span class="block">(1) 1:1 한국인 친구 매칭</span>
-                                    <span class="text-lg text-purple-700/80 font-bold block mt-1">1:1 Korean Friend Matching</span>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-2.5">
-                                <span class="w-2 h-2 rounded-full bg-purple-600 mt-3 shrink-0"></span>
-                                <div>
-                                    <span class="block">(2) 한국어 듣기 집중 훈련</span>
-                                    <span class="text-lg text-purple-700/80 font-bold block mt-1">Intensive Korean Listening Training</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 현장 신청 강조 문구 (신청 버튼 대체) -->
-                <div class="w-full bg-slate-900 rounded-2xl p-6 sm:p-8 text-center shadow-xl relative overflow-hidden flex flex-col justify-center items-center mt-2 border border-slate-800">
-                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:12px_12px]"></div>
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10"></div>
-                    <i data-lucide="quote" class="w-8 h-8 text-amber-400 mb-3 opacity-90 relative z-10"></i>
-                    <h5 class="text-2xl sm:text-3xl font-extrabold text-white mb-2 relative z-10 leading-tight tracking-tight break-keep">
-                        "지금은 돈보다<br/><span class="text-amber-300">한국어</span>가 더 중요하다."
-                    </h5>
-                    <p class="text-sm sm:text-base text-slate-400 font-medium relative z-10 mb-5">
-                        "Right now, Korean is more important than money."
-                    </p>
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-white/10 relative z-10">
-                        <i data-lucide="alert-circle" class="w-5 h-5 text-amber-300 shrink-0"></i>
-                        <div class="text-left">
-                            <p class="text-amber-300 font-bold text-xs sm:text-sm leading-none">특별반은 현장 접수만 가능</p>
-                            <p class="text-[10px] sm:text-xs text-slate-400 mt-1 leading-none">On-site application only</p>
-                        </div>
-                    </div>
+            <div class="text-center space-y-4 py-8">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    가장 빠르고 확실한<br/>
+                    <span class="text-blue-600">한국어 실력 향상</span>
+                </h1>
+                <p class="text-slate-500 font-medium mt-2">The fastest and surest way to improve your Korean</p>
+                
+                <div class="mt-6">
+                    <p class="text-slate-700 text-lg md:text-xl font-bold">유학생을 위한 맞춤형 한국어 교실에 초대합니다.</p>
+                    <p class="text-slate-500 text-sm mt-1">We invite international students to our customized Korean language classes.</p>
                 </div>
             </div>
 
-        </div>
-    </section>
+            <!-- 1. 생활 한국어 (보통반) - 파란색 배경 -->
+            <section class="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-3xl p-6 md:p-10 shadow-sm relative overflow-hidden">
+                <!-- 전액 무료 배지 (우측 상단, 크기 축소) -->
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 md:px-3 md:py-1.5 rounded-full shadow-sm transform rotate-3 z-10">
+                    전액 무료 (Free)
+                </div>
 
-    <section id="location" class="py-20 bg-slate-100 border-t border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">LOCATION</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2">찾아오시는 길</h3>
-                <p class="text-lg text-slate-500 font-medium mb-4">How to Get Here</p>
-                <p class="text-slate-600 text-base sm:text-lg">서울신학대학교 캠퍼스 내 강의 장소 안내입니다. <br class="hidden sm:block"/><span class="text-sm text-slate-400 mt-1 block">Guide to class locations on campus.</span></p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 보통반 장소 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between">
+                <div class="flex items-center gap-3 mb-6 relative z-10">
+                    <div class="bg-white text-blue-500 p-2.5 rounded-xl shadow-sm">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    </div>
                     <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg">생활 한국어 (Normal)</span>
-                            <span class="text-xs text-slate-400 font-medium text-right leading-relaxed">일요일 오전 11시<br/>Sun 11:00 AM</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-1">서울신대 앞 비전홀</h4>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Vision Hall (In front of STU)</p>
-                        <p class="text-slate-600 text-sm mb-1">학교 정문 앞 인근에 위치한 비전홀에서 편안한 분위기로 진행됩니다.</p>
-                        <p class="text-slate-400 text-xs mb-6">Classes are held in a comfortable atmosphere at Vision Hall, located near the main gate.</p>
+                        <h2 class="text-2xl font-bold text-slate-900">생활 한국어 <span class="text-blue-600 text-lg ml-1">보통반</span></h2>
+                        <p class="text-slate-500 text-sm">Basic Korean Class for Daily Life</p>
                     </div>
-                    <div class="bg-blue-50/50 p-4 rounded-2xl flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0">
-                                <i data-lucide="video" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block">길 찾기가 어렵다면? <span class="opacity-70 ml-0.5">(Hard to find?)</span></span>
-                                <span class="text-sm font-semibold text-slate-800 block mt-0.5">장소 안내 영상 확인 <span class="text-xs font-normal ml-1 text-slate-500">Video Guide</span></span>
-                            </div>
+                </div>
+
+                <div class="mb-8 relative z-10">
+                    <p class="text-slate-700 font-bold text-lg">
+                        일상생활에서 바로 쓸 수 있는 실용적인 한국어를 재미있게 배웁니다.
+                    </p>
+                    <p class="text-slate-500 text-sm mt-1">
+                        Learn practical Korean for everyday life in a fun way.
+                    </p>
+                </div>
+
+                <!-- 일시 및 장소 정렬 영역 -->
+                <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-4 md:gap-y-6 items-center relative z-10">
+                    
+                    <!-- 왼쪽 텍스트: 일시 -->
+                    <div class="flex items-center gap-2 text-slate-700 font-bold whitespace-nowrap">
+                        <i data-lucide="calendar" class="w-5 h-5 text-blue-500"></i>
+                        <span>일시 <span class="text-xs font-normal text-slate-500 ml-1">(Time)</span></span>
+                    </div>
+                    
+                    <!-- 오른쪽 박스: 시간 및 점심 (한 줄로 표시) -->
+                    <div>
+                        <div class="bg-white border border-blue-200 text-blue-800 px-5 py-3 rounded-xl shadow-sm w-full md:max-w-max whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
+                            매주 일요일 오전 11시 <span class="mx-2 text-blue-300 font-normal">|</span> 점심식사 무료 <span class="text-xs font-normal text-slate-500 ml-1">(Free Lunch)</span>
                         </div>
-                        <button onclick="openVideoModal()" class="px-4 py-2 bg-blue-600 text-white text-xs font-semibold rounded-xl hover:bg-blue-700 transition whitespace-nowrap flex flex-col items-center">
-                            영상 보기<span class="text-[10px] font-normal text-blue-200 mt-0.5">Play Video</span>
+                    </div>
+
+                    <!-- 왼쪽 텍스트: 장소 -->
+                    <div class="flex items-center gap-2 text-slate-700 font-bold mt-2 md:mt-0 whitespace-nowrap">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-blue-500"></i>
+                        <span>장소 <span class="text-xs font-normal text-slate-500 ml-1">(Location)</span></span>
+                    </div>
+
+                    <!-- 오른쪽 영역: 장소 이름 + 영상 확인 버튼 (일렬 배치) -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-2 md:mt-0">
+                        <span class="text-slate-800 font-bold text-base md:text-lg whitespace-nowrap">
+                            서울신대 앞 비전홀 <span class="text-xs md:text-sm font-normal text-slate-500 ml-1">(Vision Hall)</span>
+                        </span>
+                        <button onclick="window.openVideoModal()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm font-bold group whitespace-nowrap">
+                            <i data-lucide="play-circle" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
+                            <span>장소 안내 영상 <span class="text-xs text-blue-200 font-normal ml-1">(Location Video)</span></span>
                         </button>
                     </div>
+
+                </div>
+            </section>
+
+            <!-- 생활 한국어 신청하기 폼 (생활 한국어 카드 바로 밑으로 이동) -->
+            <section id="register" class="bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-sm scroll-mt-24">
+                <div class="mb-8 border-b border-slate-100 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="edit-3" class="w-6 h-6 text-blue-600"></i>
+                        생활 한국어 신청하기
+                    </h2>
+                    <p class="text-slate-500 text-sm mt-1">Register for Basic Korean Class</p>
                 </div>
 
-                <!-- 특별반 장소 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 bg-purple-50 text-purple-700 text-xs font-bold rounded-lg">고급 한국어 (Special)</span>
-                            <span class="text-xs text-slate-400 font-medium text-right leading-relaxed">일요일 오후 1시 - 4시<br/>Sun 1:00 PM - 4:00 PM</span>
+                <form id="registrationForm" onsubmit="window.handleFormSubmit(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <!-- 1. 이름 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">이름 (Name)</label>
+                            <input type="text" id="entry_name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition" placeholder="Your Full Name">
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-1">백주년기념관 512호</h4>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Centennial Hall Room 512</p>
-                        <p class="text-slate-600 text-sm mb-1">최신 시설을 갖춘 백주년기념관 5층 512호에서 집중 수업이 진행됩니다.</p>
-                        <p class="text-slate-400 text-xs mb-6">Intensive classes are held in Room 512 on the 5th floor of the Centennial Hall.</p>
+                        
+                        <!-- 2. 성별 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">성별 (Gender)</label>
+                            <select id="entry_gender" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
+                                <option value="" disabled selected>선택해주세요 (Select)</option>
+                                <option value="Male">남성 (Male)</option>
+                                <option value="Female">여성 (Female)</option>
+                            </select>
+                        </div>
+
+                        <!-- 3. 국가 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">국가 (Country)</label>
+                            <input type="text" id="entry_country" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition" placeholder="Your Country">
+                        </div>
+
+                        <!-- 4. 종교 -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-1">종교 (Religion)</label>
+                            <input type="text" id="entry_religion" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition" placeholder="Your Religion (Optional)">
+                        </div>
                     </div>
-                    <div class="bg-purple-50/50 p-4 rounded-2xl flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center shrink-0">
-                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+
+                    <!-- 5. 연락처 -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1">연락처 (Contact Number)</label>
+                        <input type="tel" id="entry_phone" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition" placeholder="010-0000-0000">
+                    </div>
+
+                    <button type="submit" class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-md transition-all text-lg flex justify-center items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                        신청서 제출하기 (Submit)
+                    </button>
+                </form>
+            </section>
+
+            <!-- 2. 고급 한국어 (특별반) - 짙은 색 배경 -->
+            <section class="bg-slate-900 text-white rounded-3xl p-6 md:p-10 shadow-lg relative overflow-hidden mt-8">
+                <!-- 전액 무료 배지 (크기 축소) -->
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 bg-indigo-500 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-sm transform rotate-3">
+                    전액 무료 (Free)
+                </div>
+
+                <!-- 배경 장식 (우측 하단 둥근 원) -->
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-slate-800 rounded-full opacity-50 blur-3xl pointer-events-none"></div>
+
+                <div class="flex items-center justify-between mb-6 relative z-10">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-slate-800 text-indigo-400 p-2.5 rounded-xl border border-slate-700">
+                            <i data-lucide="award" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <span class="text-xs text-slate-500 block">캠퍼스 내 위치 <span class="opacity-70 ml-0.5">(Location on Campus)</span></span>
-                            <span class="text-sm font-semibold text-slate-800 block mt-0.5">백주년기념관 512호 <span class="text-xs font-normal ml-1 text-slate-500">Centennial Hall Rm 512</span></span>
+                            <div class="flex items-baseline gap-2">
+                                <h2 class="text-2xl font-bold">고급 한국어 <span class="text-indigo-400 text-2xl font-extrabold ml-1">특별반</span></h2>
+                                <span class="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-bold px-2.5 py-0.5 rounded-full">10명</span>
+                            </div>
+                            <p class="text-slate-400 text-sm">Advanced Korean Special Class</p>
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- 일시 및 장소 안내 (새로 추가됨) -->
+                <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-6 items-center mb-8 relative z-10">
+                    
+                    <!-- 왼쪽 텍스트: 시간 -->
+                    <div class="flex items-center gap-2 text-indigo-300 font-bold whitespace-nowrap">
+                        <i data-lucide="clock" class="w-5 h-5 text-indigo-400"></i>
+                        <span>시간 <span class="text-xs font-normal text-slate-400 ml-1">(Time)</span></span>
+                    </div>
+                    
+                    <!-- 오른쪽 박스: 시간 -->
+                    <div>
+                        <div class="bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-3 rounded-xl shadow-sm w-full md:w-max whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
+                            매주 일요일 오후 1시 - 4시 <span class="text-xs font-normal text-slate-400 ml-1">(Sun 1PM - 4PM)</span>
+                        </div>
+                    </div>
+
+                    <!-- 왼쪽 텍스트: 장소 -->
+                    <div class="flex items-center gap-2 text-indigo-300 font-bold mt-2 md:mt-0 whitespace-nowrap">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-indigo-400"></i>
+                        <span>장소 <span class="text-xs font-normal text-slate-400 ml-1">(Location)</span></span>
+                    </div>
+
+                    <!-- 오른쪽 영역: 장소 이름 -->
+                    <div class="flex items-center mt-2 md:mt-0">
+                        <span class="text-slate-200 font-bold text-base md:text-lg whitespace-nowrap">
+                            백주년기념관 512호 <span class="text-xs md:text-sm font-normal text-slate-400 ml-1">(Centennial Hall Room 512)</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mb-6 relative z-10">
+                    <h3 class="font-bold text-indigo-300 mb-4 flex items-center gap-2">
+                        <i data-lucide="star" class="w-4 h-4"></i> 특별반 혜택 (Special Benefits)
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold">한국인 친구 1:1 매칭</span>
+                                <span class="text-amber-300/90 text-sm font-medium ml-1 block sm:inline mt-1 sm:mt-0">
+                                    (한국인을 빨리 사귀어야 한국어가 빠르다)
+                                </span>
+                                <p class="text-slate-400 text-sm mt-1">1:1 Korean Friend Matching (Making Korean friends is the fastest way to learn)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <span class="font-semibold">한국어 듣기 집중 훈련</span>
+                                <span class="text-amber-300/90 text-sm font-medium ml-1 block sm:inline mt-1 sm:mt-0">
+                                    (집중적이고, 반복적으로 듣기를 해야 한국어가 빠르다.)
+                                </span>
+                                <p class="text-slate-400 text-sm mt-1">Intensive Listening Practice (Intensive and repetitive listening makes you learn faster)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 명언 강조 구역 (현장 접수 안내 삭제) -->
+                <div class="text-center mt-10 mb-2 relative z-10">
+                    <p class="text-xl md:text-2xl text-white font-bold italic tracking-wide">"지금은 돈보다 한국어가 더 중요하다"</p>
+                    <p class="text-slate-400 text-sm md:text-base mt-2">"Right now, Korean is more important than money."</p>
+                </div>
+            </section>
+
         </div>
-    </section>
-
-    <section id="apply" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-8 sm:p-12 overflow-hidden relative">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20"></div>
-            
-            <div class="text-center max-w-xl mx-auto mb-10 relative z-10">
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2 block">REGISTRATION</span>
-                <h3 class="text-3xl font-extrabold text-slate-900 mb-2">지금 바로 참여 신청하세요</h3>
-                <p class="text-lg text-slate-500 font-medium mb-4">Apply right now</p>
-                <p class="text-slate-600 text-sm sm:text-base">아래 양식을 작성해 주시면 담당자가 확인 후 빠르게 연락드립니다. <br/><span class="text-sm text-slate-400 mt-1 block">Fill out the form below and we will contact you shortly.</span></p>
-            </div>
-
-            <form id="applyForm" onsubmit="handleSubmit(event)" class="space-y-6 relative z-10">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">이름 (Name)</label>
-                        <input type="text" id="name" required placeholder="홍길동 / John Doe" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">연락처 (Phone / Kakao ID)</label>
-                        <input type="text" id="contact" required placeholder="010-0000-0000 / Kakao ID" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">국적 (Nationality)</label>
-                        <input type="text" id="nationality" required placeholder="예: 베트남, 중국 / ex: USA" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">희망 과정 선택 (Select Course)</label>
-                        <select id="programType" class="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-slate-600 text-sm focus:outline-none transition font-medium appearance-none" style="pointer-events: none;" readonly>
-                            <option value="normal">생활 한국어 / Everyday Korean (보통반/Normal)</option>
-                        </select>
-                        <p class="text-[11px] text-purple-600 mt-1.5 font-bold flex items-center gap-1">
-                            <i data-lucide="info" class="w-3 h-3"></i> 
-                            특별반은 현장에서 직접 신청하셔야 합니다. (Special class is on-site only)
-                        </p>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">기타 문의사항 또는 자기소개 (Memo/Inquiry)</label>
-                    <textarea id="memo" rows="3" placeholder="한국어 학습 경험이나 궁금한 점을 적어주세요. / Please write your Korean learning experience or any questions." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/25 flex flex-col items-center justify-center text-base">
-                    <div class="flex items-center gap-2"><i data-lucide="send" class="w-5 h-5"></i> 신청서 제출하기</div>
-                    <span class="text-xs text-blue-200 font-normal mt-0.5">Submit Application</span>
-                </button>
-            </form>
-        </div>
-    </section>
+    </main>
 
     <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
-                <div class="flex items-center justify-center md:justify-start space-x-3 mb-2">
-                    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
-                        <i data-lucide="book-open" class="w-4 h-4"></i>
-                    </div>
-                    <span class="text-white font-bold text-lg tracking-tight">서울신학대학교 국제학부 <span class="text-sm font-normal text-slate-400 ml-1">STU Global Division</span></span>
-                </div>
-                <p class="text-xs text-slate-500">Copyright &copy; 2026 Seoul Theological University. All rights reserved.</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i data-lucide="book-open" class="w-5 h-5 text-slate-600"></i>
+                <span class="font-bold text-slate-300">한국어 교실</span>
             </div>
-            <div class="flex items-center justify-center space-x-6 text-sm">
-                <a href="#about" class="hover:text-white transition flex flex-col items-center"><span class="block">소개</span><span class="text-[10px] mt-0.5 opacity-60">About</span></a>
-                <a href="#classes" class="hover:text-white transition flex flex-col items-center"><span class="block">과정안내</span><span class="text-[10px] mt-0.5 opacity-60">Curriculum</span></a>
-                <a href="#location" class="hover:text-white transition flex flex-col items-center"><span class="block">오시는길</span><span class="text-[10px] mt-0.5 opacity-60">Location</span></a>
-            </div>
+            <p class="text-xs text-slate-600 mb-6">© 2026 Korean Language Classes. All rights reserved.</p>
+            
+            <!-- 관리자 모드 접속 버튼 (눈에 띄게 중앙에 버튼 형태로 배치) -->
+            <button onclick="window.openAdminLoginModal()" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-slate-700 shadow-sm">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                <span>신청자 명단 보기 (Admin)</span>
+            </button>
         </div>
     </footer>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
-            <div class="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between">
-                <div>
-                    <h3 class="text-lg font-bold text-slate-900">비전홀 찾아오기 장소 안내 영상</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Vision Hall Direction Video</p>
-                </div>
-                <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-600 transition shrink-0">
+    <!-- 1. 장소 안내 영상 모달 -->
+    <div id="videoModal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl">
+            <div class="flex justify-between items-center p-4 border-b border-slate-100">
+                <h3 class="font-bold text-slate-800">서울신대 앞 비전홀 오시는 길</h3>
+                <button onclick="window.closeVideoModal()" class="p-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
-            <div class="p-6">
-                <div class="aspect-video bg-slate-900 rounded-2xl overflow-hidden relative flex items-center justify-center text-white">
-                    <!-- Placeholder video container -->
-                    <div class="text-center p-6">
-                        <div class="w-16 h-16 rounded-full bg-blue-600/80 flex items-center justify-center mx-auto mb-3 shadow-lg animate-pulse">
-                            <i data-lucide="play" class="w-8 h-8 fill-current"></i>
-                        </div>
-                        <p class="text-sm font-medium text-slate-300 mb-1">장소 안내 영상이 재생됩니다.</p>
-                        <p class="text-xs text-slate-500">Video will be played here.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 sm:p-6 bg-slate-50 border-t border-slate-100 flex justify-end">
-                <button onclick="closeVideoModal()" class="px-5 py-2 bg-slate-900 text-white font-semibold rounded-xl hover:bg-slate-800 transition text-sm flex flex-col items-center">
-                    확인 완료<span class="text-[10px] font-normal text-slate-300 mt-0.5">Close</span>
-                </button>
+            <!-- 영상 자리표시자 (유튜브 iframe으로 교체 가능) -->
+            <div class="aspect-video bg-slate-200 flex flex-col items-center justify-center text-slate-500 relative">
+                <i data-lucide="video" class="w-12 h-12 mb-2 opacity-50"></i>
+                <p>이곳에 안내 영상이 재생됩니다.</p>
+                <p class="text-sm">(YouTube iframe을 여기에 넣으세요)</p>
             </div>
         </div>
     </div>
 
-    <!-- Custom Message Box Modal (Alert replacement) -->
-    <div id="messageModal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl p-6 text-center">
-            <div id="msgIcon" class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
-                <i data-lucide="check-circle" class="w-8 h-8"></i>
+    <!-- 2. 커스텀 알림 모달 -->
+    <div id="alertModal" class="fixed inset-0 z-[70] hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl w-full max-w-sm p-6 text-center shadow-2xl transform scale-95 transition-transform" id="alertBox">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <i data-lucide="check" class="h-6 w-6 text-green-600"></i>
             </div>
-            <h3 id="msgTitle" class="text-xl font-bold text-slate-900 mb-1">신청이 완료되었습니다!</h3>
-            <p id="msgTitleEng" class="text-sm font-semibold text-slate-500 mb-3">Application Completed!</p>
-            
-            <p id="msgBody" class="text-slate-600 text-sm mb-1">입력해주신 연락처로 안내 사항을 전달해 드리겠습니다.</p>
-            <p id="msgBodyEng" class="text-slate-400 text-xs mb-6">We will contact you via the contact info provided.</p>
-            
-            <button onclick="closeMessageModal()" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition flex flex-col items-center justify-center">
-                <span class="block text-sm">확인</span>
-                <span class="block text-[10px] text-blue-200 mt-0.5">Confirm</span>
+            <h3 class="text-lg font-bold text-slate-900 mb-2" id="alertTitle">완료</h3>
+            <p class="text-sm text-slate-500 mb-6" id="alertMessage">메시지 내용</p>
+            <button onclick="window.closeAlertModal()" class="w-full bg-blue-600 text-white rounded-xl py-3 font-semibold hover:bg-blue-700 transition">
+                확인 (OK)
             </button>
         </div>
     </div>
 
+    <!-- 3. 관리자 로그인 모달 -->
+    <div id="adminLoginModal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl w-full max-w-sm p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-bold text-slate-800 flex items-center gap-2">
+                    <i data-lucide="lock" class="w-5 h-5 text-slate-500"></i> 관리자 로그인
+                </h3>
+                <button onclick="window.closeAdminLoginModal()" class="p-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <input type="password" id="adminPassword" placeholder="비밀번호를 입력하세요" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500" onkeypress="if(event.key === 'Enter') window.checkAdminPassword()">
+                <button onclick="window.checkAdminPassword()" class="w-full bg-slate-800 hover:bg-slate-900 text-white rounded-xl py-3 font-semibold transition">
+                    접속하기
+                </button>
+                <p class="text-xs text-center text-slate-500 mt-2">* 힌트: 1234</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. 관리자 대시보드 (신청자 명단) 모달 -->
+    <div id="adminDashboardModal" class="fixed inset-0 z-[90] hidden flex items-center justify-center p-4 sm:p-6 bg-slate-100">
+        <div class="bg-white rounded-2xl w-full h-full max-w-5xl shadow-2xl flex flex-col">
+            
+            <div class="p-4 sm:p-6 border-b border-slate-200 flex justify-between items-center bg-white rounded-t-2xl">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                        <i data-lucide="users" class="w-6 h-6 text-blue-600"></i>
+                        생활 한국어 신청자 명단
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-1">총 <span id="totalApplicants" class="font-bold text-blue-600">0</span>명의 신청자가 있습니다.</p>
+                </div>
+                <button onclick="window.closeAdminDashboard()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2">
+                    <i data-lucide="log-out" class="w-4 h-4"></i> 닫기
+                </button>
+            </div>
+
+            <div class="flex-1 overflow-auto p-4 sm:p-6 bg-slate-50">
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[600px]">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm">
+                                    <th class="p-4 font-semibold w-16 text-center">No.</th>
+                                    <th class="p-4 font-semibold">이름 (Name)</th>
+                                    <th class="p-4 font-semibold">성별 (Gender)</th>
+                                    <th class="p-4 font-semibold">국가 (Country)</th>
+                                    <th class="p-4 font-semibold">종교 (Religion)</th>
+                                    <th class="p-4 font-semibold">연락처 (Contact)</th>
+                                    <th class="p-4 font-semibold">신청일시</th>
+                                    <th class="p-4 font-semibold text-center">관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicantTableBody" class="divide-y divide-slate-100 text-sm text-slate-700">
+                                <!-- 데이터가 여기에 추가됩니다 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="emptyState" class="hidden flex-col items-center justify-center py-20 text-slate-400">
+                    <i data-lucide="inbox" class="w-12 h-12 mb-3 opacity-30"></i>
+                    <p>아직 신청자가 없습니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Initialize Lucide Icons
+        // Lucide 아이콘 초기화
         lucide.createIcons();
 
-        // Video Modal Controls (Attached to window for inline HTML calls)
+        // ----------------------------------------------------
+        // 1. 폼 데이터 및 로컬 저장소 (In-Memory State) 관리
+        // ----------------------------------------------------
+        // 페이지가 새로고침되어도 유지되도록 간단히 localStorage를 사용합니다.
+        // Firebase를 쓰지 않고 단일 세션에서도 완벽하게 작동하게 만듭니다.
+        let applicants = JSON.parse(localStorage.getItem('korean_class_applicants') || '[]');
+
+        window.handleFormSubmit = function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('entry_name').value;
+            const gender = document.getElementById('entry_gender').value;
+            const country = document.getElementById('entry_country').value;
+            const religion = document.getElementById('entry_religion').value;
+            const phone = document.getElementById('entry_phone').value;
+            const date = new Date().toLocaleString('ko-KR');
+
+            const newApplicant = { name, gender, country, religion, phone, date };
+            
+            // 배열 최상단에 추가 (최신순 정렬)
+            applicants.unshift(newApplicant);
+            
+            // 로컬 스토리지에 저장 (임시 저장소 역할)
+            localStorage.setItem('korean_class_applicants', JSON.stringify(applicants));
+
+            // 폼 초기화
+            e.target.reset();
+
+            // 성공 알림 모달 띄우기
+            window.showAlertModal(
+                "신청 완료! (Success!)", 
+                "생활 한국어 클래스 신청이 성공적으로 접수되었습니다.<br>Your application has been successfully submitted."
+            );
+        };
+
+        // ----------------------------------------------------
+        // 2. 모달창 제어 로직
+        // ----------------------------------------------------
+        
+        // --- 알림(Alert) 모달 ---
+        window.showAlertModal = function(title, message) {
+            document.getElementById('alertTitle').innerText = title;
+            document.getElementById('alertMessage').innerHTML = message;
+            
+            const modal = document.getElementById('alertModal');
+            const box = document.getElementById('alertBox');
+            
+            modal.classList.remove('hidden');
+            // 애니메이션 효과
+            setTimeout(() => {
+                box.classList.remove('scale-95');
+                box.classList.add('scale-100');
+            }, 10);
+        };
+
+        window.closeAlertModal = function() {
+            const modal = document.getElementById('alertModal');
+            const box = document.getElementById('alertBox');
+            
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 150);
+        };
+
+        // --- 영상 모달 ---
         window.openVideoModal = function() {
             document.getElementById('videoModal').classList.remove('hidden');
-        }
+        };
         window.closeVideoModal = function() {
             document.getElementById('videoModal').classList.add('hidden');
-        }
+        };
 
-        // Custom Message Box Controls (replacing alert)
-        window.showMessage = function(title, titleEng, body, bodyEng, isSuccess = true) {
-            document.getElementById('msgTitle').innerText = title;
-            document.getElementById('msgTitleEng').innerText = titleEng;
-            document.getElementById('msgBody').innerText = body;
-            document.getElementById('msgBodyEng').innerText = bodyEng;
-            
-            const iconContainer = document.getElementById('msgIcon');
-            if(isSuccess) {
-                iconContainer.className = "w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4";
-                iconContainer.innerHTML = '<i data-lucide="check-circle" class="w-8 h-8"></i>';
-            } else {
-                iconContainer.className = "w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4";
-                iconContainer.innerHTML = '<i data-lucide="alert-circle" class="w-8 h-8"></i>';
-            }
-            lucide.createIcons();
-            document.getElementById('messageModal').classList.remove('hidden');
-        }
+        // --- 관리자 로그인 모달 ---
+        window.openAdminLoginModal = function() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+            document.getElementById('adminPassword').value = '';
+            document.getElementById('adminPassword').focus();
+        };
         
-        window.closeMessageModal = function() {
-            document.getElementById('messageModal').classList.add('hidden');
-        }
+        window.closeAdminLoginModal = function() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+        };
 
-        // Close modals on outside click
-        window.onclick = function(event) {
-            const videoModal = document.getElementById('videoModal');
-            const messageModal = document.getElementById('messageModal');
-            if (event.target === videoModal) {
-                window.closeVideoModal();
-            }
-            if (event.target === messageModal) {
-                window.closeMessageModal();
-            }
-        }
-    </script>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Environment variables for Firebase setup
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
-
-        let app, db, auth;
-        let isFirebaseReady = false;
-
-        try {
-            app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            auth = getAuth(app);
-            
-            // Wait for Authentication before allowing database operations
-            const token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-            if (token) {
-                signInWithCustomToken(auth, token).then(() => {
-                    isFirebaseReady = true;
-                }).catch(console.error);
+        // --- 관리자 비밀번호 확인 ---
+        window.checkAdminPassword = function() {
+            const pw = document.getElementById('adminPassword').value;
+            if (pw === '1234') {
+                window.closeAdminLoginModal();
+                window.openAdminDashboard();
             } else {
-                signInAnonymously(auth).then(() => {
-                    isFirebaseReady = true;
-                }).catch(console.error);
+                // 커스텀 알림 사용
+                window.closeAdminLoginModal();
+                window.showAlertModal('오류', '비밀번호가 일치하지 않습니다.<br>(힌트: 1234)');
             }
-        } catch (error) {
-            console.error("Firebase initialization error:", error);
-        }
+        };
 
-        // Form submission handler (Database Save Logic)
-        window.handleSubmit = async function(event) {
-            event.preventDefault();
-            
-            const submitBtn = event.target.querySelector('button[type="submit"]');
-            const originalBtnHTML = submitBtn.innerHTML;
-            
-            // Update button to show loading state
-            submitBtn.innerHTML = '<div class="flex items-center gap-2"><i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> 전송 중...</div><span class="text-xs text-blue-200 font-normal mt-0.5">Processing...</span>';
-            submitBtn.disabled = true;
-            lucide.createIcons();
-            
-            // Gather form data
-            const name = document.getElementById('name').value;
-            const contact = document.getElementById('contact').value;
-            const nationality = document.getElementById('nationality').value;
-            const program = document.getElementById('programType').value;
-            const memo = document.getElementById('memo').value;
-            
-            let programName = "생활 한국어 (보통반)";
-            let programNameEng = "Everyday Korean (Normal)";
-            
-            if(program === 'special') {
-                programName = "고급 한국어 (특별반)";
-                programNameEng = "Advanced Korean (Special)";
-            } else if(program === 'both') {
-                programName = "생활/고급 한국어 두 과정 모두";
-                programNameEng = "Both Courses";
-            }
+        // --- 관리자 대시보드 모달 ---
+        window.openAdminDashboard = function() {
+            document.getElementById('adminDashboardModal').classList.remove('hidden');
+            renderApplicantsTable();
+        };
 
-            try {
-                if (!isFirebaseReady) {
-                    throw new Error("데이터베이스 연결 중입니다. 잠시 후 다시 시도해주세요. (Database connecting...)");
-                }
+        window.closeAdminDashboard = function() {
+            document.getElementById('adminDashboardModal').classList.add('hidden');
+        };
 
-                // Reference to the secure application submissions collection
-                const applicationsRef = collection(db, 'artifacts', appId, 'public', 'data', 'applications');
-                
-                // Save document to Cloud Firestore
-                await addDoc(applicationsRef, {
-                    name: name,
-                    contact: contact,
-                    nationality: nationality,
-                    program: program,
-                    programName: programName,
-                    memo: memo,
-                    timestamp: serverTimestamp(),
-                    userId: auth.currentUser?.uid || 'anonymous'
+        // --- 특정 신청자 삭제 로직 ---
+        window.deleteApplicant = function(index) {
+            // 배열에서 해당 인덱스의 데이터 삭제
+            applicants.splice(index, 1);
+            
+            // 변경된 데이터를 로컬 스토리지에 다시 저장
+            localStorage.setItem('korean_class_applicants', JSON.stringify(applicants));
+            
+            // 테이블 다시 그리기
+            renderApplicantsTable();
+            
+            // 알림 모달 띄우기
+            window.showAlertModal("삭제 완료", "신청자 기록이 성공적으로 삭제되었습니다.");
+        };
+
+        // ----------------------------------------------------
+        // 3. 관리자 대시보드 테이블 렌더링
+        // ----------------------------------------------------
+        function renderApplicantsTable() {
+            const tbody = document.getElementById('applicantTableBody');
+            const totalSpan = document.getElementById('totalApplicants');
+            const emptyState = document.getElementById('emptyState');
+            
+            tbody.innerHTML = '';
+            totalSpan.innerText = applicants.length;
+
+            if (applicants.length === 0) {
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+            } else {
+                emptyState.classList.add('hidden');
+                emptyState.classList.remove('flex');
+
+                applicants.forEach((app, index) => {
+                    const tr = document.createElement('tr');
+                    tr.className = 'hover:bg-slate-50 transition-colors';
+                    tr.innerHTML = `
+                        <td class="p-4 text-center text-slate-400 font-medium">${applicants.length - index}</td>
+                        <td class="p-4 font-bold text-slate-900">${app.name}</td>
+                        <td class="p-4">
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${app.gender === 'Male' ? 'bg-blue-100 text-blue-700' : app.gender === 'Female' ? 'bg-pink-100 text-pink-700' : 'bg-slate-100 text-slate-700'}">
+                                ${app.gender}
+                            </span>
+                        </td>
+                        <td class="p-4">${app.country}</td>
+                        <td class="p-4">${app.religion || '-'}</td>
+                        <td class="p-4 font-medium">${app.phone}</td>
+                        <td class="p-4 text-xs text-slate-500">${app.date}</td>
+                        <td class="p-4 text-center">
+                            <button onclick="window.deleteApplicant(${index})" class="text-rose-500 hover:bg-rose-50 p-2 rounded-lg transition-colors tooltip" title="삭제하기">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
                 });
-
-                // Show success modal
-                window.showMessage(
-                    `${name}님, 신청이 접수되었습니다!`,
-                    `${name}, your application has been received!`,
-                    `선택하신 [${programName}] 과정 안내를 연락처로 전송해 드립니다.`,
-                    `Details for [${programNameEng}] will be sent to your contact info.`,
-                    true
-                );
                 
-                // Reset form fields
-                document.getElementById('applyForm').reset();
-
-            } catch (error) {
-                console.error("Database Error: ", error);
-                
-                // Show error modal
-                window.showMessage(
-                    `신청 접수에 실패했습니다.`,
-                    `Submission Failed`,
-                    `시스템 오류가 발생했습니다: ${error.message}`,
-                    `System error occurred. Please try again.`,
-                    false
-                );
-            } finally {
-                // Restore original button state
-                submitBtn.innerHTML = originalBtnHTML;
-                submitBtn.disabled = false;
+                // 동적으로 추가된 아이콘을 다시 렌더링합니다.
                 lucide.createIcons();
             }
         }
