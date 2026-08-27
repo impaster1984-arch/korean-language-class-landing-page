@@ -429,10 +429,8 @@
           <span class="material-symbols-outlined">close</span>
         </button>
       </div>
-      <div class="aspect-video bg-surface-container flex flex-col items-center justify-center text-on-surface-variant relative">
-        <span class="material-symbols-outlined text-5xl mb-2 opacity-50">videocam</span>
-        <p>이곳에 안내 영상이 재생됩니다.</p>
-        <p class="text-sm">(YouTube iframe을 여기에 넣으세요)</p>
+      <div class="aspect-video bg-surface-container">
+        <iframe id="videoFrame" class="w-full h-full" src="" title="서울신대 앞 비전홀 오시는 길" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -579,11 +577,15 @@
       }, 150);
     };
 
+    const VIDEO_EMBED_URL = 'https://www.youtube.com/embed/XMTIheVHVG8?autoplay=1&rel=0';
+
     window.openVideoModal = function() {
+      document.getElementById('videoFrame').src = VIDEO_EMBED_URL;
       document.getElementById('videoModal').classList.remove('hidden');
     };
     window.closeVideoModal = function() {
       document.getElementById('videoModal').classList.add('hidden');
+      document.getElementById('videoFrame').src = ''; // 닫을 때 재생 중지
     };
 
     window.openAdminLoginModal = function() {
