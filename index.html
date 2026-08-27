@@ -38,14 +38,14 @@
 
     <main class="pt-24 pb-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            
+
             <div class="text-center space-y-4 py-8">
                 <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
                     가장 빠르고 확실한<br/>
                     <span class="text-blue-600">한국어 실력 향상</span>
                 </h1>
                 <p class="text-slate-500 font-medium mt-2">The fastest and surest way to improve your Korean</p>
-                
+
                 <div class="mt-6">
                     <p class="text-slate-700 text-lg md:text-xl font-bold">유학생을 위한 맞춤형 한국어 교실에 초대합니다.</p>
                     <p class="text-slate-500 text-sm mt-1">We invite international students to our customized Korean language classes.</p>
@@ -80,13 +80,13 @@
 
                 <!-- 일시 및 장소 정렬 영역 -->
                 <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-4 md:gap-y-6 items-center relative z-10">
-                    
+
                     <!-- 왼쪽 텍스트: 일시 -->
                     <div class="flex items-center gap-2 text-slate-700 font-bold whitespace-nowrap">
                         <i data-lucide="calendar" class="w-5 h-5 text-blue-500"></i>
                         <span>일시 <span class="text-xs font-normal text-slate-500 ml-1">(Time)</span></span>
                     </div>
-                    
+
                     <!-- 오른쪽 박스: 시간 및 점심 (한 줄로 표시) -->
                     <div>
                         <div class="bg-white border border-blue-200 text-blue-800 px-5 py-3 rounded-xl shadow-sm w-full md:max-w-max whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
@@ -131,7 +131,7 @@
                             <label class="block text-sm font-semibold text-slate-700 mb-1">이름 (Name)</label>
                             <input type="text" id="entry_name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition" placeholder="Your Full Name">
                         </div>
-                        
+
                         <!-- 2. 성별 -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-1">성별 (Gender)</label>
@@ -195,13 +195,13 @@
 
                 <!-- 일시 및 장소 안내 (새로 추가됨) -->
                 <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4 md:gap-6 items-center mb-8 relative z-10">
-                    
+
                     <!-- 왼쪽 텍스트: 시간 -->
                     <div class="flex items-center gap-2 text-indigo-300 font-bold whitespace-nowrap">
                         <i data-lucide="clock" class="w-5 h-5 text-indigo-400"></i>
                         <span>시간 <span class="text-xs font-normal text-slate-400 ml-1">(Time)</span></span>
                     </div>
-                    
+
                     <!-- 오른쪽 박스: 시간 -->
                     <div>
                         <div class="bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-3 rounded-xl shadow-sm w-full md:w-max whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
@@ -268,7 +268,7 @@
                 <span class="font-bold text-slate-300">한국어 교실</span>
             </div>
             <p class="text-xs text-slate-600 mb-6">© 2026 Korean Language Classes. All rights reserved.</p>
-            
+
             <!-- 관리자 모드 접속 버튼 (눈에 띄게 중앙에 버튼 형태로 배치) -->
             <button onclick="window.openAdminLoginModal()" class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-300 px-5 py-2.5 rounded-full text-sm font-medium transition-colors border border-slate-700 shadow-sm">
                 <i data-lucide="lock" class="w-4 h-4"></i>
@@ -333,7 +333,7 @@
     <!-- 4. 관리자 대시보드 (신청자 명단) 모달 -->
     <div id="adminDashboardModal" class="fixed inset-0 z-[90] hidden flex items-center justify-center p-4 sm:p-6 bg-slate-100">
         <div class="bg-white rounded-2xl w-full h-full max-w-5xl shadow-2xl flex flex-col">
-            
+
             <div class="p-4 sm:p-6 border-b border-slate-200 flex justify-between items-center bg-white rounded-t-2xl">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
@@ -369,7 +369,7 @@
                         </table>
                     </div>
                 </div>
-                
+
                 <div id="emptyState" class="hidden flex-col items-center justify-center py-20 text-slate-400">
                     <i data-lucide="inbox" class="w-12 h-12 mb-3 opacity-30"></i>
                     <p>아직 신청자가 없습니다.</p>
@@ -391,7 +391,7 @@
 
         window.handleFormSubmit = function(e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('entry_name').value;
             const gender = document.getElementById('entry_gender').value;
             const country = document.getElementById('entry_country').value;
@@ -400,10 +400,10 @@
             const date = new Date().toLocaleString('ko-KR');
 
             const newApplicant = { name, gender, country, religion, phone, date };
-            
+
             // 배열 최상단에 추가 (최신순 정렬)
             applicants.unshift(newApplicant);
-            
+
             // 로컬 스토리지에 저장 (임시 저장소 역할)
             localStorage.setItem('korean_class_applicants', JSON.stringify(applicants));
 
@@ -412,7 +412,7 @@
 
             // 성공 알림 모달 띄우기
             window.showAlertModal(
-                "신청 완료! (Success!)", 
+                "신청 완료! (Success!)",
                 "생활 한국어 클래스 신청이 성공적으로 접수되었습니다.<br>Your application has been successfully submitted."
             );
         };
@@ -420,15 +420,15 @@
         // ----------------------------------------------------
         // 2. 모달창 제어 로직
         // ----------------------------------------------------
-        
+
         // --- 알림(Alert) 모달 ---
         window.showAlertModal = function(title, message) {
             document.getElementById('alertTitle').innerText = title;
             document.getElementById('alertMessage').innerHTML = message;
-            
+
             const modal = document.getElementById('alertModal');
             const box = document.getElementById('alertBox');
-            
+
             modal.classList.remove('hidden');
             // 애니메이션 효과
             setTimeout(() => {
@@ -440,7 +440,7 @@
         window.closeAlertModal = function() {
             const modal = document.getElementById('alertModal');
             const box = document.getElementById('alertBox');
-            
+
             box.classList.remove('scale-100');
             box.classList.add('scale-95');
             setTimeout(() => {
@@ -462,7 +462,7 @@
             document.getElementById('adminPassword').value = '';
             document.getElementById('adminPassword').focus();
         };
-        
+
         window.closeAdminLoginModal = function() {
             document.getElementById('adminLoginModal').classList.add('hidden');
         };
@@ -494,13 +494,13 @@
         window.deleteApplicant = function(index) {
             // 배열에서 해당 인덱스의 데이터 삭제
             applicants.splice(index, 1);
-            
+
             // 변경된 데이터를 로컬 스토리지에 다시 저장
             localStorage.setItem('korean_class_applicants', JSON.stringify(applicants));
-            
+
             // 테이블 다시 그리기
             renderApplicantsTable();
-            
+
             // 알림 모달 띄우기
             window.showAlertModal("삭제 완료", "신청자 기록이 성공적으로 삭제되었습니다.");
         };
@@ -512,7 +512,7 @@
             const tbody = document.getElementById('applicantTableBody');
             const totalSpan = document.getElementById('totalApplicants');
             const emptyState = document.getElementById('emptyState');
-            
+
             tbody.innerHTML = '';
             totalSpan.innerText = applicants.length;
 
@@ -546,7 +546,7 @@
                     `;
                     tbody.appendChild(tr);
                 });
-                
+
                 // 동적으로 추가된 아이콘을 다시 렌더링합니다.
                 lucide.createIcons();
             }
