@@ -79,7 +79,7 @@
                 </div>
 
                 <!-- 일시 및 장소 정렬 영역 -->
-                <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-4 md:gap-y-6 items-center relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-4 gap-y-2 md:gap-y-6 items-center relative z-10">
 
                     <!-- 왼쪽 텍스트: 일시 -->
                     <div class="flex items-center gap-2 text-slate-700 font-bold whitespace-nowrap">
@@ -89,7 +89,7 @@
 
                     <!-- 오른쪽 박스: 시간 및 점심 (한 줄로 표시) -->
                     <div>
-                        <div class="bg-white border border-blue-200 text-blue-800 px-5 py-3 rounded-xl shadow-sm w-full md:max-w-max whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
+                        <div class="bg-white border border-blue-200 text-blue-800 px-5 py-3 rounded-xl shadow-sm w-full md:max-w-max md:whitespace-nowrap font-bold text-center md:text-left text-sm md:text-base">
                             매주 일요일 오전 11시 <span class="mx-2 text-blue-300 font-normal">|</span> 점심식사 무료 <span class="text-xs font-normal text-slate-500 ml-1">(Free Lunch)</span>
                         </div>
                     </div>
@@ -102,10 +102,10 @@
 
                     <!-- 오른쪽 영역: 장소 이름 + 영상 확인 버튼 (일렬 배치) -->
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mt-2 md:mt-0">
-                        <span class="text-slate-800 font-bold text-base md:text-lg whitespace-nowrap">
+                        <span class="text-slate-800 font-bold text-base md:text-lg md:whitespace-nowrap">
                             서울신대 앞 비전홀 <span class="text-xs md:text-sm font-normal text-slate-500 ml-1">(Vision Hall)</span>
                         </span>
-                        <button onclick="window.openVideoModal()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm font-bold group whitespace-nowrap">
+                        <button onclick="window.openVideoModal()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm font-bold group sm:whitespace-nowrap">
                             <i data-lucide="play-circle" class="w-5 h-5 flex-shrink-0 group-hover:scale-110 transition-transform"></i>
                             <span>장소 안내 영상 <span class="text-xs text-blue-200 font-normal ml-1">(Location Video)</span></span>
                         </button>
